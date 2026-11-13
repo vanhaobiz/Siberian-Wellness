@@ -294,7 +294,7 @@
                     <i class="fa-solid fa-plus text-siberian-600"></i> Thêm SP mới
                 </button>
                 <button onclick="triggerAutoSync(true)" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow flex items-center gap-1.5">
-                    <i class="fa-solid fa-rotate"></i> Cập nhật Ảnh & Giá từ Web gốc
+                    <i class="fa-solid fa-rotate"></i> Cập nhật Ảnh & Giá chi tiết
                 </button>
             </div>
         </div>
@@ -626,7 +626,7 @@
             </div>
             <div class="flex justify-between items-center pt-2">
                 <button onclick="autoFetchSingleProductImage()" class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-xs border border-emerald-200 flex items-center gap-1">
-                    <i class="fa-solid fa-arrows-rotate"></i> Đồng bộ Giá & Ảnh từ Web gốc
+                    <i class="fa-solid fa-arrows-rotate"></i> Đồng bộ Giá & Ảnh chi tiết
                 </button>
                 <div class="flex gap-2">
                     <button onclick="closeEditImageModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 font-semibold text-xs">Đóng</button>
@@ -1638,7 +1638,7 @@
                 const candidates = getOfficialImageCandidates(prod.id);
                 const firstSrc = candidates[0] || generateSiberianPackSVG(prod);
                 const originProductUrl = `https://vn.siberianhealth.com/vn/shop/catalog/product/${prod.id}/`;
-                const syncTimeLabel = prod.lastSyncTime ? `Live ${prod.lastSyncTime}` : 'Chuẩn Web gốc';
+                const syncTimeLabel = prod.lastSyncTime ? `Live ${prod.lastSyncTime}` : 'Đã xác thực chi tiết';
 
                 return `
                 <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
@@ -2263,7 +2263,7 @@
             products.unshift(newProd);
             filterProducts();
             closeAddCustomProductModal();
-            showToast(`Đã bổ sung sản phẩm "${name}" và tự động đồng bộ từ web gốc!`, "emerald");
+            showToast(`Đã bổ sung sản phẩm "${name}" và tự động đồng bộ chi tiết!`, "emerald");
         }
 
         // Quản lý Modal chỉnh sửa / đồng bộ lại ảnh & giá cho từng sản phẩm
